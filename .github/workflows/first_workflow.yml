@@ -1,5 +1,5 @@
 name: Firs Workflow
-on: [push]
+on: workflow_dispatch
 
 jobs:
   run-first-command:
