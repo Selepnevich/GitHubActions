@@ -7,4 +7,8 @@ jobs:
     steps:
       - name: Display some text
         run: echo "Some Text"
+      - name: command in Multititle
+        run: |
+          node -v
+          npm -v
 
