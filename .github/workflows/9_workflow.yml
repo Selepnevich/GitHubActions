@@ -1,0 +1,12 @@
+name: Nine Workflow
+on: 
+  repository_dispatch:
+    types: [test]  # придумываем сами
+
+
+jobs:
+  run-first-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display some Text
+        run: echo ${{ github.event.client_payload.titleTest }}

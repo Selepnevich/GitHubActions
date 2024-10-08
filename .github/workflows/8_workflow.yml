@@ -22,8 +22,6 @@ on:
             type: boolean
             required: true
 
-
-
 jobs:
   run-first-command:
     runs-on: ubuntu-latest
