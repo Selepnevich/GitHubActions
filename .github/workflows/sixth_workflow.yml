@@ -1,0 +1,24 @@
+name: Six Workflow
+on: 
+  push:
+    #  использовать либо branches либо branches-ignore
+    branches:
+      - main
+      - "page/*"  # все ветки page/about
+      - "page/**"  #  page/about/v1
+    # branches-ignore:  
+    #   - "page/blog"
+    # tags:
+    #   - "v1"  # можно сздать патеры v1.*
+    #   - "!v1.2.1"  # исключаем патерны
+    paths:  # патерны путей находится отдельно от основных
+      - "**.html"
+
+jobs:
+  run-first-command:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Event Vars
+        run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REF
