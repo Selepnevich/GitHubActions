@@ -8,9 +8,28 @@ on:
             required: true
             default: "Hello!"
 
+        selectCustom:
+            description: Select
+            type: choice
+            required: true
+            options:
+                - V1
+                - V2
+                - V3
+            default: "V1"
+        checkCustom:
+            description: Checkbox
+            type: boolean
+            required: true
+
+
+
 jobs:
   run-first-command:
     runs-on: ubuntu-latest
     steps:
       - name: Display some Text
-        run: echo "title ${{ inputs.titleCustom }}"
+        run: |
+          echo "title ${{ inputs.titleCustom }}"
+          echo "Select ${{ inputs.selectCustom }}"
+          echo "Checkbox ${{ inputs.checkCustom }}"
