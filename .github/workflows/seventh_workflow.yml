@@ -1,7 +1,7 @@
 name: Seven Workflow
 on: 
     schedule:
-        - cron: "*/5 * * * *"
+        - cron: "50 14 * * *"
 
 jobs:
   run-first-command:
