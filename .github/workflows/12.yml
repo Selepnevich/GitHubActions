@@ -1,0 +1,16 @@
+# Секреты
+# в настройках самого репазитория ищем secrets and variables -> actions
+# создаем секрет
+# так же можно создать Environment variables - переменные среды
+
+name: Twelve Workflow
+on: push
+
+jobs:
+    run-command:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Secrets and Var
+              run: |
+                echo "${{ vars.STATUS }}"
+                echo "${{ secrets.PASSWORD }}"
