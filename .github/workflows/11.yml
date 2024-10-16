@@ -10,6 +10,8 @@ jobs:
     env:
       JOB_CUSTOM_VAR: JOB 1
     steps:
+      - name: Set New Var
+        run: echo "NEW_WAR=New Value" >> "$GITHUB_ENV"
       - name: Event Vars
         env:
           STEP_CUSTOM_VAR: STEP 1
@@ -21,6 +23,11 @@ jobs:
           echo $JOB_CUSTOM_VAR
           echo $STEP_CUSTOM_VAR
           echo '${{ env.WF_CUSTOM_VAR }}'
+          echo $NEW_WAR
 
-# echo $WF_CUSTOM_VAR  #генирируется на стороне локальной машины
-# echo '${{ env.WF_CUSTOM_VAR }'  # генерируется на стороне гитхаба
+# echo $WF_CUSTOM_VAR  #генирируется на стороне локальной машины, ранер достает значение
+# $WF_CUSTOM_VAR имеет смысл только при работе с шагом
+
+# echo '${{ env.WF_CUSTOM_VAR }'  # генерируется на стороне гитхаба, уже имеет готовое значение
+
+# "$GITHUB_ENV" - путь до особого файла со всеми переменными
