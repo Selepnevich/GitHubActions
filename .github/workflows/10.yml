@@ -1,5 +1,6 @@
 name: Ten Workflow
 on: push
+run-name: "display context Info"
 
 jobs:
   run-first-command:
@@ -12,4 +13,7 @@ jobs:
           echo '${{ toJson(runner) }}'
           echo '${{ toJson(job) }}'
           echo '${{ toJson(steps) }}'
+      - name: Steps
+        run: echo '${{ toJson(steps) }}'
+
 
